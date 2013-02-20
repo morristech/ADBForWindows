@@ -57,6 +57,13 @@ class Window(QtGui.QWidget):
 		self.minimize.leaveEvent = self.minimize_leave
 		self.minimize.mouseReleaseEvent = self.minimizeButton
 
+		self.loggedIn = QtGui.QLabel(self)
+		self.loggedIn.setPixmap(QtGui.QPixmap('img/logIn.png'))
+		self.loggedIn.setGeometry(575, 23, 44, 8)
+		#self.loggedIn.enterEvent = self.minimize_enter
+		#self.loggedIn.leaveEvent = self.minimize_leave
+		#self.loggedIn.mouseReleaseEvent = self.minimizeButton
+
 		self.show()
 
 	def mouseMoveEvent(self, event):
