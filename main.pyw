@@ -23,6 +23,11 @@ class Window(QtGui.QWidget):
 	def minimize_leave(self, event):
 		self.minimize.setPixmap(QtGui.QPixmap('img/minimize_up.png'))
 
+	def pushBulletHover_enter(self, event):
+		self.pushBulletHover.setPixmap(QtGui.QPixmap('img/pushBulletHover.png'))
+	def pushBulletHover_leave(self, event):
+		self.pushBulletHover.setPixmap(QtGui.QPixmap('img/pushBulletHoverOff.png'))
+
 	def exitButton(self, event):
 		exit(0)
 
@@ -63,6 +68,13 @@ class Window(QtGui.QWidget):
 		#self.loggedIn.enterEvent = self.minimize_enter
 		#self.loggedIn.leaveEvent = self.minimize_leave
 		#self.loggedIn.mouseReleaseEvent = self.minimizeButton
+
+		self.pushBulletHover = QtGui.QLabel(self)
+		self.pushBulletHover.setPixmap(QtGui.QPixmap('img/pushBulletHoverOff.png'))
+		self.pushBulletHover.setGeometry(561, 1, 107, 36)
+		self.pushBulletHover.enterEvent = self.pushBulletHover_enter
+		self.pushBulletHover.leaveEvent = self.pushBulletHover_leave
+		self.pushBulletHover.mouseReleaseEvent = self.pushBulletHover
 
 		self.show()
 
